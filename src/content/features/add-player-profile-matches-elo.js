@@ -1,13 +1,11 @@
 import React from 'dom-chef'
 import select from 'select-dom'
-import { randomNumber } from '../../shared/utils'
 import {
   hasFeatureAttribute,
   setFeatureAttribute,
 } from '../helpers/dom-element'
 import { getEloChangesByMatches } from '../helpers/elo'
 import { getPlayer, getPlayerMatches, getSelf } from '../helpers/faceit-api'
-import { getIsFreeMember } from '../helpers/membership'
 import {
   getPlayerProfileNickname,
   getPlayerProfileStatsGame,
@@ -29,9 +27,6 @@ export default async (statsContentElement) => {
   }
 
   setFeatureAttribute(FEATURE_ATTRIBUTE, statsContentElement)
-
-  const self = await getSelf()
-  const selfIsFreeMember = getIsFreeMember(self)
 
   const nickname = getPlayerProfileNickname()
   const game = getPlayerProfileStatsGame()
@@ -80,10 +75,9 @@ export default async (statsContentElement) => {
           display: 'flex',
           gap: 4,
           alignItems: 'center',
-          cursor: selfIsFreeMember && 'help',
         }}
         title={
-          selfIsFreeMember ? 'This feature requires FACEIT Premium' : undefined
+          undefined
         }
       >
         <svg
@@ -93,7 +87,7 @@ export default async (statsContentElement) => {
           viewBox="0 0 24 12"
           style={{ height: 8 }}
         >
-          <title>Elo Icon</title>
+          <title>Elo Icon Test</title>
           <path
             fill="#fff"
             d="M12 3c0 .463-.105.902-.292 1.293l1.998 2A2.97 2.97 0 0 1 15 6a2.99 2.99 0 0 1 1.454.375l1.921-1.921a3 3 0 1 1 1.5 1.328l-2.093 2.093a3 3 0 1 1-5.49-.168l-1.999-2a2.992 2.992 0 0 1-2.418.074L5.782 7.876a3 3 0 1 1-1.328-1.5l1.921-1.921A3 3 0 1 1 12 3z"
@@ -104,11 +98,22 @@ export default async (statsContentElement) => {
             color: '#fff',
             fontWeight: 'normal',
             textTransform: 'none',
-            filter: selfIsFreeMember && 'blur(4px)',
-            opacity: selfIsFreeMember && 0.33,
           }}
         >
-          {selfIsFreeMember ? randomNumber(1000, 3000) : newElo}
+          {newElo}
+        </span>
+        <span
+          style={{
+            color: '#fff',
+            fontWeight: 'normal',
+            textTransform: 'none',
+            marginLeft: 75,
+          }}>
+          {match.i6 ? `${match.i6}` : ''}
+          /
+          {match.i8 ? `${match.i8}` : ''}
+          /
+          {match.i7 ? `${match.i7}` : ''}
         </span>
       </div>
     )

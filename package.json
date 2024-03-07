@@ -7,11 +7,9 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "precommit": "lint-staged",
     "dev": "tsx scripts/build.ts --dev",
     "dev:firefox": "tsx scripts/build.ts --dev --firefox",
     "test": "NODE_OPTIONS=\"--import=tsx --no-warnings\" ava",
-    "lint": "biome check .",
     "types": "tsc",
     "build": "tsx scripts/build.ts",
     "build:firefox": "tsx scripts/build.ts",
@@ -45,7 +43,6 @@
     "webextension-polyfill": "^0.10.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.5.2",
     "@tsconfig/node20": "^20.1.2",
     "@types/node": "^20.11.5",
     "@types/react": "^18.2.48",
@@ -60,9 +57,7 @@
     "esbuild-plugin-inline-import": "^1.0.2",
     "esbuild-style-plugin": "^1.6.3",
     "execa": "^1.0.0",
-    "husky": "^8.0.3",
     "linkedom": "^0.16.8",
-    "lint-staged": "^15.2.0",
     "load-json-file": "^6.0.0",
     "npm-run-all": "^4.1.2",
     "postcss": "^8.4.33",

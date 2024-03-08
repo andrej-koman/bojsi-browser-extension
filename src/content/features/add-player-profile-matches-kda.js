@@ -62,7 +62,6 @@ export default async (statsContentElement) => {
     const player = await getPlayer(nickname)
     const game = getPlayerProfileStatsGame()
     const matches = await getPlayerMatches(player.id, game, 30)
-
     matchElements.forEach(async (matchElement, index) => {
         const matchId = matches[index].matchId
 
@@ -71,7 +70,7 @@ export default async (statsContentElement) => {
         }
 
         const match = matches[index]
-        
+
         console.log(match)
 
         const kdaElement = (
@@ -87,11 +86,9 @@ export default async (statsContentElement) => {
                         fontWeight: 'normal',
                         textTransform: 'none',
                     }}>
-                    {match.i6 ? `${match.i6}` : ''}
-                    /
-                    {match.i8 ? `${match.i8}` : ''}
-                    /
-                    {match.i7 ? `${match.i7}` : ''}
+                    <p>
+                        {match.i6 ? `${match.i6}` : ''} / {match.i8 ? `${match.i8}` : ''} / {match.i7 ? `${match.i7}` : ''}
+                    </p>
                 </span>
             </td>
         );

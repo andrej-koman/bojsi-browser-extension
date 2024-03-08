@@ -1,9 +1,8 @@
 {
   "name": "bojsi ehnancer",
   "description": "Bojsi number one",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 3,
-  "homepage_url": "https://repeek.gg",
   "minimum_chrome_version": "105.0",
   "browser_specific_settings": {
     "gecko": {

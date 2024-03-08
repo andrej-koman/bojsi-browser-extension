@@ -28,6 +28,7 @@ export default async (statsContentElement) => {
 
     setFeatureAttribute(FEATURE_ATTRIBUTE, statsContentElement)
 
+    // Add KDA column
     matchElementsHead.children[matchElementsHead.children.length - 2].insertAdjacentElement('beforebegin', (
         <th
             style={{
@@ -39,6 +40,21 @@ export default async (statsContentElement) => {
             }}
         >
             KDA
+        </th>
+    ));
+
+    // Add K/R column
+    matchElementsHead.children[matchElementsHead.children.length - 2].insertAdjacentElement('beforebegin', (
+        <th
+            style={{
+                color: '#8c8c8c',
+                padding: 8,
+                marginBottom: 8,
+                textAlign: 'left',
+                width: 160,
+            }}
+        >
+            K/R
         </th>
     ));
 
@@ -80,8 +96,30 @@ export default async (statsContentElement) => {
             </td>
         );
 
+        const krElement = (
+            <td
+                style={{
+                    borderTop: '1px solid #676767',
+                    padding: 8,
+                }}
+            >
+                <span
+                    style={{
+                        color: '#fff',
+                        fontWeight: 'normal',
+                        textTransform: 'none',
+                    }}>
+                    {match.c3 ? `${match.c3}` : ''}
+                </span>
+            </td>
+        );
+
         matchElement.children[
             matchElement.children.length - 3
         ].insertAdjacentElement('beforebegin', kdaElement)
+
+        matchElement.children[
+            matchElement.children.length - 3
+        ].insertAdjacentElement('beforebegin', krElement)
     })
 }

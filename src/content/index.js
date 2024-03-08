@@ -10,6 +10,7 @@ import addPlayerProfileExtendedStats from './features/add-player-profile-extende
 import addPlayerProfileLevelProgress from './features/add-player-profile-level-progress'
 import addPlayerProfileMatchesDemo from './features/add-player-profile-matches-demo'
 import addPlayerProfileMatchesElo from './features/add-player-profile-matches-elo'
+import addPlayerProfileMatchesKda from './features/add-player-profile-matches-kda'
 import addSidebarMatchesElo from './features/add-sidebar-matches-elo'
 import applyMatchRoomFocusMode from './features/apply-match-room-focus-mode'
 import clickMatchRoomConnectToServer from './features/click-match-room-connect-to-server'
@@ -23,7 +24,6 @@ import clickModalMatchRoomCaptainOk from './features/click-modal-match-room-capt
 import clickModalPartyInviteAccept from './features/click-modal-party-invite-accept'
 import closeFaceitClientDownloadBanner from './features/close-faceit-client-download-banner'
 import copyMatchRoomCopyServerData from './features/copy-match-room-copy-server-data'
-import notifications from './features/notifications'
 import * as modals from './helpers/modals'
 import * as pages from './helpers/pages'
 import { runFeatureIf } from './helpers/user-settings'
@@ -64,6 +64,7 @@ function addPlayerProfileStatsFeatures(isPlayerProfileModal) {
   )
   addPlayerProfileMatchesDemo(statsContentElement)
   addPlayerProfileMatchesElo(statsContentElement)
+  addPlayerProfileMatchesKda(statsContentElement)
   addPlayerProfileExtendedStats(statsContentElement)
 }
 
@@ -181,8 +182,6 @@ async function initContent() {
   if (IS_FACEIT_BETA ? !extensionEnabledFaceitBeta : !extensionEnabled) {
     return
   }
-
-  notifications()
 
   observeBody()
 }

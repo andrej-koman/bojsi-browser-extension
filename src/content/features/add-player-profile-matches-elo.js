@@ -102,19 +102,6 @@ export default async (statsContentElement) => {
         >
           {newElo}
         </span>
-        <span
-          style={{
-            color: '#fff',
-            fontWeight: 'normal',
-            textTransform: 'none',
-            marginLeft: 75,
-          }}>
-          {match.i6 ? `${match.i6}` : ''}
-          /
-          {match.i8 ? `${match.i8}` : ''}
-          /
-          {match.i7 ? `${match.i7}` : ''}
-        </span>
       </div>
     )
 

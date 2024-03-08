@@ -41,7 +41,7 @@ export default async (statsContentElement) => {
 
   matchElements.forEach((matchElement, i) => {
     const scoreElement = select('td:nth-child(4) span', matchElement)
-    const mapElement = select('td:nth-child(5) span', matchElement)
+    const mapElement = select('td:nth-child(7) span', matchElement)
 
     const match = matches[i]
 
@@ -66,6 +66,8 @@ export default async (statsContentElement) => {
     }
 
     const resultElement = select('td:nth-child(3) span', matchElement)
+
+    console.log(resultElement);
 
     resultElement.textContent += ` (${eloDiff >= 0 ? '+' : ''}${eloDiff})`
 

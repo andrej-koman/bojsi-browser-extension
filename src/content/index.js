@@ -4,7 +4,6 @@ import storage from '../shared/storage'
 import addHeaderLevelProgress from './features/add-header-level-progress'
 import addMatchRoomEloEstimation from './features/add-match-room-elo-estimation'
 import addMatchRoomPlayerBadges from './features/add-match-room-player-badges'
-import addMatchRoomSkinOfTheMatch from './features/add-match-room-skin-of-the-match'
 import addPlayerProfileBadge from './features/add-player-profile-badge'
 import addPlayerProfileExtendedStats from './features/add-player-profile-extended-stats'
 import addPlayerProfileLevelProgress from './features/add-player-profile-level-progress'
@@ -136,7 +135,6 @@ function observeBody() {
       if (pages.isRoomOverview()) {
         addMatchRoomEloEstimation()
         addMatchRoomPlayerBadges(mainContentElement)
-        addMatchRoomSkinOfTheMatch(mainContentElement)
         runFeatureIf(
           'matchRoomAutoCopyServerData',
           copyMatchRoomCopyServerData,

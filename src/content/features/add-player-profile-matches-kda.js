@@ -71,8 +71,6 @@ export default async (statsContentElement) => {
 
         const match = matches[index]
 
-        console.log(match)
-
         const kdaElement = (
             <td
                 style={{
@@ -86,7 +84,9 @@ export default async (statsContentElement) => {
                         fontWeight: 'normal',
                         textTransform: 'none',
                     }}>
-                    <p>
+                    <p style={{
+                        margin: 0,
+                    }}>
                         {match.i6 ? `${match.i6}` : ''} / {match.i8 ? `${match.i8}` : ''} / {match.i7 ? `${match.i7}` : ''}
                     </p>
                 </span>

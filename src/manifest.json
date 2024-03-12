@@ -1,7 +1,7 @@
 {
   "name": "bojsi ehnancer",
   "description": "Bojsi number one",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 3,
   "minimum_chrome_version": "105.0",
   "browser_specific_settings": {
